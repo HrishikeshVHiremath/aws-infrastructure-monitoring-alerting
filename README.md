@@ -30,6 +30,18 @@ EC2 Instance → CloudWatch Agent → Amazon CloudWatch → CloudWatch Dashboard
 8. Integrated Amazon SNS to deliver email notifications.
 9. Verified that both alarms reached the OK state.
 
+## CloudWatch Agent Configuration
+
+The CloudWatch Agent was configured to collect system-level metrics at 60-second intervals.
+
+The configuration includes:
+- Memory utilization: `mem_used_percent`
+- Disk utilization: `used_percent`
+- Filesystem monitored: `/`
+- Custom namespace: `CloudMonitoringProject`
+
+Configuration file: [cloudwatch-agent-config.json](cloudwatch-agent-config.json)
+
 ## Monitoring Configuration
 
 |      Metric          | Threshold   | Monitoring Period |
