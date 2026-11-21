@@ -45,7 +45,8 @@ flowchart TB
     style AWS fill:#f5f7fa,stroke:#232f3e,stroke-width:2px
     style EC2 fill:#eaf3ff,stroke:#1473e6
     style MONITOR fill:#fff5e6,stroke:#e69500
-    style SNS fill:#e8f5e9,stroke:#238636```
+    style SNS fill:#e8f5e9,stroke:#238636
+```
 
 
 ## AWS Services Used
