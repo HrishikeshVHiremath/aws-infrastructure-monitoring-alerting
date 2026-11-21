@@ -32,14 +32,9 @@ EC2 Instance → CloudWatch Agent → Amazon CloudWatch → CloudWatch Dashboard
 
 ## Monitoring Configuration
 
-| Metric | Threshold | Monitoring Period |
-|---|---:|---|
-| Memory Utilization | Above 80% | 1 minute |
-| Disk Utilization | Above 80% | 1 minute |
-
-## Screenshots
-
-Screenshots of the CloudWatch dashboard, alarms, and EC2 instance are available in the `screenshots/` directory.
+|      Metric          | Threshold   | Monitoring Period |
+| Memory Utilization   | Above 80%   |    1 minute       |
+|  Disk Utilization    | Above 80%   |    1 minute       |
 
 ## Security Considerations
 
@@ -62,6 +57,17 @@ Note: CloudWatch metrics, dashboards, alarms, SNS, and associated AWS resources 
 - CloudWatch dashboards and alarms.
 - SNS email notification integration.
 - Basic AWS monitoring and troubleshooting.
+
+## Project Screenshots
+
+### CloudWatch Monitoring Dashboard
+![CloudWatch Dashboard](cloudwatch-dashboard.png)
+
+### CloudWatch Alarms
+![CloudWatch Alarms](cloudwatch-alarms.png)
+
+### EC2 Instance
+![EC2 Instance](ec2-instance.png)
 
 ## Author
 
