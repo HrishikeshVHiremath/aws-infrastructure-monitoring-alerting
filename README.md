@@ -61,10 +61,10 @@ Note: CloudWatch metrics, dashboards, alarms, SNS, and associated AWS resources 
 ## Project Screenshots
 
 ### CloudWatch Monitoring Dashboard
-![CloudWatch Dashboard](cloudwatch-dashboard.png)
+![CloudWatch Dashboard](Dashboard.png)
 
 ### CloudWatch Alarms
-![CloudWatch Alarms](cloudwatch-alarms.png)
+![CloudWatch Alarms](Alarms.png)
 
 ### EC2 Instance
 ![EC2 Instance](ec2-instance.png)
