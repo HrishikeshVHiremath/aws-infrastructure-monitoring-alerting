@@ -6,9 +6,47 @@ This project implements an AWS-based infrastructure monitoring and alerting syst
 
 The system collects memory and disk utilization metrics through the CloudWatch Agent, displays them in a centralized CloudWatch dashboard, and generates email notifications when resource utilization exceeds configured thresholds.
 
+
 ## Architecture
 
-EC2 Instance → CloudWatch Agent → Amazon CloudWatch → CloudWatch Dashboard & Alarms → Amazon SNS Email Notifications
+```mermaid
+flowchart TB
+    subgraph AWS["AWS Cloud"]
+        subgraph EC2["Amazon EC2"]
+            LINUX["Amazon Linux 2023"]
+            AGENT["Amazon CloudWatch Agent"]
+            LINUX --> AGENT
+        end
+
+        IAM["AWS IAM Role"]
+        CW["Amazon CloudWatch"]
+
+        AGENT -->|"Memory & Disk Metrics"| CW
+        IAM -.->|"Secure Permissions"| EC2
+
+        subgraph MONITOR["CloudWatch Monitoring"]
+            DASH["CloudWatch Dashboard"]
+            ALARM1["Memory Alarm<br/>Threshold: 80%"]
+            ALARM2["Disk Alarm<br/>Threshold: 80%"]
+        end
+
+        CW --> DASH
+        CW --> ALARM1
+        CW --> ALARM2
+
+        SNS["Amazon SNS Topic"]
+        EMAIL["Email Notification"]
+
+        ALARM1 -->|"Alarm Notification"| SNS
+        ALARM2 -->|"Alarm Notification"| SNS
+        SNS --> EMAIL
+    end
+
+    style AWS fill:#f5f7fa,stroke:#232f3e,stroke-width:2px
+    style EC2 fill:#eaf3ff,stroke:#1473e6
+    style MONITOR fill:#fff5e6,stroke:#e69500
+    style SNS fill:#e8f5e9,stroke:#238636```
+
 
 ## AWS Services Used
 
